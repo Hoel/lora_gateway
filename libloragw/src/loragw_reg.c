@@ -591,7 +591,7 @@ int lgw_disconnect(void) {
 int lgw_soft_reset(void) {
     /* check if SPI is initialised */
     if ((lgw_spi_target == NULL) || (lgw_regpage < 0)) {
-        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED\n");
+        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED lgw_soft_reset\n");
         return LGW_REG_ERROR;
     }
     lgw_spi_w(lgw_spi_target, lgw_spi_mux_mode, LGW_SPI_MUX_TARGET_SX1301, 0, 0x80); /* 1 -> SOFT_RESET bit */
@@ -612,8 +612,8 @@ int lgw_reg_check(FILE *f) {
 
     /* check if SPI is initialised */
     if ((lgw_spi_target == NULL) || (lgw_regpage < 0)) {
-        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED\n");
-        fprintf(f, "ERROR: CONCENTRATOR UNCONNECTED\n");
+        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED lgw_reg_check\n");
+        fprintf(f, "ERROR: CONCENTRATOR UNCONNECTED lgw_reg_check\n");
         return LGW_REG_ERROR;
     }
 
@@ -647,7 +647,7 @@ int lgw_reg_w(uint16_t register_id, int32_t reg_value) {
 
     /* check if SPI is initialised */
     if ((lgw_spi_target == NULL) || (lgw_regpage < 0)) {
-        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED\n");
+        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED lgw_reg_w\n");
         return LGW_REG_ERROR;
     }
 
@@ -702,7 +702,7 @@ int lgw_reg_r(uint16_t register_id, int32_t *reg_value) {
 
     /* check if SPI is initialised */
     if ((lgw_spi_target == NULL) || (lgw_regpage < 0)) {
-        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED\n");
+        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED lgw_reg_r\n");
         return LGW_REG_ERROR;
     }
 
@@ -744,7 +744,7 @@ int lgw_reg_wb(uint16_t register_id, uint8_t *data, uint16_t size) {
 
     /* check if SPI is initialised */
     if ((lgw_spi_target == NULL) || (lgw_regpage < 0)) {
-        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED\n");
+        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED lgw_reg_wb\n");
         return LGW_REG_ERROR;
     }
 
@@ -793,7 +793,7 @@ int lgw_reg_rb(uint16_t register_id, uint8_t *data, uint16_t size) {
 
     /* check if SPI is initialised */
     if ((lgw_spi_target == NULL) || (lgw_regpage < 0)) {
-        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED\n");
+        DEBUG_MSG("ERROR: CONCENTRATOR UNCONNECTED lgw_reg_rb\n");
         return LGW_REG_ERROR;
     }
 
